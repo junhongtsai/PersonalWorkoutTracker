@@ -1,12 +1,15 @@
 import json
 #載入處理 JSON 的工具
+import os
 
 from datetime import date, timedelta
 from collections import Counter
+
+BASE = os.path.dirname(os.path.abspath(__file__))
 def load_workouts(path):
 #建立讀取運動紀錄的函式
 
-    with open(path, "r", encoding="utf-8") as file:
+    with open(os.path.join(BASE, path), "r", encoding="utf-8") as file:
     #開啟指定的檔案
 
         return json.load(file)
